@@ -10,14 +10,60 @@ const config = {
   };
 
 firebase.initializeApp(config);
+const database = firebase.database();
 
 
-firebase.database().ref().set({
-    name: 'Severi Peltonen',
-    age: 15,
-    yes: true,
-    location: {
-        city: 'New York',
-        country: 'usa'
-    }
-});
+
+export { firebase, database as default };
+
+
+
+// database.ref('expenses')
+// .on('value')
+// .then((snapshot) => {
+//     const expenses = [];
+//     snapshot.forEach((childSnapshot) => {
+//         expenses.push({
+//             id: childSnapshot.key,
+//             ...childSnapshot.val()
+//         });
+//     });
+
+//     console.log(expenses);
+// });
+
+// database.ref('expenses')
+// .on('value', (snapshot) => {
+//     const expenses = [];
+//     snapshot.forEach((childSnapshot) => {
+//         expenses.push({
+//             id: childSnapshot,
+//             ...childSnapshot.val()
+//         });
+//     });
+//     console.log(expenses);
+// });
+
+// database.ref('expenses').push({
+//     description: 'oii',
+//     note: '',
+//     amount: 1090,
+//     createdAt: 115522
+
+// });
+
+// database.ref('expenses').push({
+//     description: 'rent',
+//     note: '',
+//     amount: 55220,
+//     createdAt: 8855225588
+
+// });
+
+// database.ref('expenses').push({
+//     description: 'phone bill',
+//     note: '',
+//     amount: 456456,
+//     createdAt: 114477114477
+
+// });
